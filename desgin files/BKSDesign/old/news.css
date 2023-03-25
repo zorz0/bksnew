@@ -1,0 +1,7 @@
+.ct-blog .fauxcrop {
+    height: 100%;
+    overflow: hidden;
+}
+.ct-blog .fauxcrop img {
+    width: 100%;
+}
