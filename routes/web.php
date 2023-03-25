@@ -1,6 +1,9 @@
 <?php
+use App\Http\Controllers\HomeController;
 
-Route::view('/', 'welcome');
+
+
+Route::view('/', 'welcome')->name('home-page');
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
@@ -114,3 +117,11 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::post('frontend/profile/destroy', 'ProfileController@destroy')->name('profile.destroy');
     Route::post('frontend/profile/password', 'ProfileController@password')->name('profile.password');
 });
+
+
+Route::group(['prefix' => 'pages','as' => 'pages.'], function() {
+    Route::get('news',[HomeController::class,'news'])->name('news');
+    Route::get('store',[HomeController::class,'store'])->name('store');
+    Route::get('contact-us',[HomeController::class,'contactUs'])->name('contact-us');
+});
+

@@ -47,7 +47,7 @@
 </head>
 
 <body class="u-body u-stick-footer u-xl-mode">
-  <header class="u-clearfix u-header u-image lazyload u-header">
+  <header class="u-clearfix u-header u-image lazyload u-header" style="background-image: url({{ asset('images/headerbg.png')}})">
     <a href="#" class="u-align-center u-image u-logo u-image-1">
       <img src="{{ asset('images/logo.png')}}" class="u-logo-image u-logo-image-1">
     </a>
@@ -73,7 +73,7 @@
         <ul class="u-custom-font u-nav u-spacing-2 u-unstyled u-nav-1">
           <li class="u-nav-item">
             <a class="u-active-custom-color-2 u-bottom-left-radius-50 u-bottom-right-radius-50 u-button-style u-hover-custom-color-2 u-nav-link u-text-active-white u-text-hover-white"
-              href="#">
+              href="{{ route('pages.contact-us')}}">
               تواصل معنا
             </a>
           </li>
@@ -85,19 +85,19 @@
           </li>
           <li class="u-nav-item active">
             <a class="u-active-custom-color-2 u-bottom-left-radius-50 u-bottom-right-radius-50 u-button-style u-hover-custom-color-2 u-nav-link u-text-active-white u-text-hover-white"
-              href="/index.html">
+              href="{{ route('home-page')}}">
               الرئيسية
             </a>
           </li>
           <li class="u-nav-item">
             <a class="u-active-custom-color-2 u-bottom-left-radius-50 u-bottom-right-radius-50 u-button-style u-hover-custom-color-2 u-nav-link u-text-active-white u-text-hover-white"
-              href="#">
+              href="{{ route('pages.store')}}">
               المتجر
             </a>
           </li>
           <li class="u-nav-item">
             <a class="u-active-custom-color-2 u-bottom-left-radius-50 u-bottom-right-radius-50 u-button-style u-hover-custom-color-2 u-nav-link u-text-active-white u-text-hover-white"
-              href="#">
+              href="{{ route('pages.news')}}">
               أخبارنا
             </a>
           </li>

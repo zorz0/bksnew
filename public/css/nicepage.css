@@ -48796,7 +48796,7 @@ blockquote {
 .u-header {
   background-position: 50% 50%;
   min-height: 349px;
-  background-image: url(./images/headerbg.png);
+  /* background-image: url(./images/headerbg.png); */
 }
 
 .u-header .u-image-1 {
