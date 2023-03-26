@@ -224,6 +224,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 54,
+                'title' => 'slider_create',
+            ],
+            [
+                'id'    => 55,
+                'title' => 'slider_edit',
+            ],
+            [
+                'id'    => 56,
+                'title' => 'slider_show',
+            ],
+            [
+                'id'    => 57,
+                'title' => 'slider_delete',
+            ],
+            [
+                'id'    => 58,
+                'title' => 'slider_access',
+            ],
+            [
+                'id'    => 59,
                 'title' => 'profile_password_edit',
             ],
         ];

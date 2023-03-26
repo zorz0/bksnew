@@ -1,9 +1,6 @@
 <?php
-use App\Http\Controllers\HomeController;
 
-
-
-Route::view('/', 'welcome')->name('home-page');
+Route::view('/', 'welcome');
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
@@ -53,6 +50,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Catecategory News
     Route::delete('catecategory-newss/destroy', 'CatecategoryNewsController@massDestroy')->name('catecategory-newss.massDestroy');
     Route::resource('catecategory-newss', 'CatecategoryNewsController');
+
+    // Slider
+    Route::delete('sliders/destroy', 'SliderController@massDestroy')->name('sliders.massDestroy');
+    Route::post('sliders/media', 'SliderController@storeMedia')->name('sliders.storeMedia');
+    Route::post('sliders/ckmedia', 'SliderController@storeCKEditorImages')->name('sliders.storeCKEditorImages');
+    Route::resource('sliders', 'SliderController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
     // Change password
@@ -112,16 +115,14 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::delete('catecategory-newss/destroy', 'CatecategoryNewsController@massDestroy')->name('catecategory-newss.massDestroy');
     Route::resource('catecategory-newss', 'CatecategoryNewsController');
 
+    // Slider
+    Route::delete('sliders/destroy', 'SliderController@massDestroy')->name('sliders.massDestroy');
+    Route::post('sliders/media', 'SliderController@storeMedia')->name('sliders.storeMedia');
+    Route::post('sliders/ckmedia', 'SliderController@storeCKEditorImages')->name('sliders.storeCKEditorImages');
+    Route::resource('sliders', 'SliderController');
+
     Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
     Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');
     Route::post('frontend/profile/destroy', 'ProfileController@destroy')->name('profile.destroy');
     Route::post('frontend/profile/password', 'ProfileController@password')->name('profile.password');
 });
-
-
-Route::group(['prefix' => 'pages','as' => 'pages.'], function() {
-    Route::get('news',[HomeController::class,'news'])->name('news');
-    Route::get('store',[HomeController::class,'store'])->name('store');
-    Route::get('contact-us',[HomeController::class,'contactUs'])->name('contact-us');
-});
-

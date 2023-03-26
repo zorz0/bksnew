@@ -7,4 +7,8 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Product Different
     Route::apiResource('product-differents', 'ProductDifferentApiController');
+
+    // Slider
+    Route::post('sliders/media', 'SliderApiController@storeMedia')->name('sliders.storeMedia');
+    Route::apiResource('sliders', 'SliderApiController');
 });
